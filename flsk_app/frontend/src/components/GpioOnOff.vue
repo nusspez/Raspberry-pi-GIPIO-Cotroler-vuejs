@@ -66,7 +66,7 @@ export default {
   },
   mounted () {
     axios
-      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+      .get('http://192.168.1.71:5000/api/v1.0/actions/')
       .then(response => (this.mensaje = response))
   }
 }

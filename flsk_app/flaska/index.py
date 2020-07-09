@@ -35,14 +35,14 @@ class Action(Resource):
 
 class ActionList(Resource):
     def get(self):
-        return actions
+        return jsonify(actions)
 
     def post(self):
         args = parser. parse_args()
         action_id = int(max(actions.keys())) + 1
         action_id = '%i' % action_id
         actions[action_id] = {'state': args['state']}
-        return actions[action_id], 201
+        return jsonify(actions[action_id]), 201
 
 api.add_resource(ActionList, '/api/v1.0/actions/')
 
