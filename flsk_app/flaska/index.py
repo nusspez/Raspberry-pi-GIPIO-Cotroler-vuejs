@@ -5,7 +5,8 @@ from flask import jsonify
 from flask_cors import CORS
 
 
-CORS(app, resources={r'/*': {'origins': '*'}})
+# CORS(app, resources={r'/*': {'origins': '*'}})
+CORS(app, resources=r'/api/*')
 
 
 actions = {}
@@ -36,7 +37,7 @@ class Action(Resource):
         actions[action_id] = query
         pin_action = Pin(query['state'], action_id)
         pin_action.change_satate()
-        return query, 201
+        return jsonify(query, 201)
 
 class ActionList(Resource):
     def get(self):

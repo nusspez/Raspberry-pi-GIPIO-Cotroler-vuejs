@@ -47,7 +47,8 @@
 
       {{mensaje}}
 
-
+    <v-switch v-model="switch1" :label="`Switch 1: ${switch1.toString()}`"></v-switch>
+    <button v-on:click="postMesage()">Di hola</button>
 
 
     </v-container>
@@ -61,7 +62,11 @@ export default {
   name: 'Gpio',
   data(){
     return{
-      mensaje: ' '
+      mensaje: '',
+      switch1: true,
+      post: {
+        state:"1"
+      }
     }
   },
   mounted () {
@@ -71,11 +76,13 @@ export default {
   },
   created () {
     this.getMensaje()
+
   },
   methods:{
-    axios
-    .post("http://192.168.1.71:5000//api/v1.0/action/2")
 
+    postMesage: function () {
+axios.post("http://192.168.1.71:5000//api/v1.0/action/2", JSON.stringify(JSON.stringify({ state: "1" })))
+    }
   }
 }
 </script>
