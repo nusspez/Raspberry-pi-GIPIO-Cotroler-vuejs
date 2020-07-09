@@ -68,6 +68,14 @@ export default {
     axios
       .get('http://192.168.1.71:5000/api/v1.0/mensaje')
       .then(response => (this.mensaje = response))
+  },
+  created () {
+    this.getMensaje()
+  },
+  methods:{
+    axios
+    .post("http://192.168.1.71:5000//api/v1.0/action/2")
+
   }
 }
 </script>
