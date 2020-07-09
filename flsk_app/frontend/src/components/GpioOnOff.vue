@@ -3,7 +3,7 @@
     <h3>Raspberry pi controler</h3>
     <v-container fluid>
       <v-row>
-        <v-col cols="2">
+        <!-- <v-col cols="2">
           <v-switch flat :label="`GPIO 2`"></v-switch>
           <v-switch flat :label="`GPIO 3`"></v-switch>
           <v-switch flat :label="`GPIO 4`"></v-switch>
@@ -42,10 +42,10 @@
         <v-col cols="2">
           <v-switch flat :label="`GPIO 26`"></v-switch>
           <v-switch flat :label="`GPIO 27`"></v-switch>
-        </v-col>
+        </v-col> -->
       </v-row>
 
-      <h1>{{mensaje}}</h1>
+      <p>{{mensaje}}</p>
 
 
 
@@ -61,7 +61,7 @@ export default {
   name: 'Gpio',
   data(){
     return{
-      mensaje: ''
+      mensaje: ' '
     }
   },
   methods:{

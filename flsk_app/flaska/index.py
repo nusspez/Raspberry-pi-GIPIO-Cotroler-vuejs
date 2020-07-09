@@ -3,7 +3,6 @@ from resources.control import Pin
 from flask_restful import Resource,reqparse,Api
 import json
 
-
 actions = {}
 
 for i in range(2,28):
