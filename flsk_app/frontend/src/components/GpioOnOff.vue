@@ -45,7 +45,7 @@
         </v-col> -->
       </v-row>
 
-      <p>{{mensaje}}</p>
+      {{mensaje}}
 
 
 
@@ -66,7 +66,7 @@ export default {
   },
   mounted () {
     axios
-      .get('http://127.0.0.1:5000/api/v1.0/actions/')
+      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
       .then(response => (this.mensaje = response))
   }
 }
