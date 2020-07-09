@@ -1,7 +1,7 @@
 from app import app,api
 from resources.control import Pin
 from flask_restful import Resource,reqparse,Api
-import json
+from flask import jsonify
 
 actions = {}
 
@@ -35,14 +35,14 @@ class Action(Resource):
 
 class ActionList(Resource):
     def get(self):
-        return json(actions)
+        return jsonify(actions)
 
     def post(self):
         args = parser. parse_args()
         action_id = int(max(actions.keys())) + 1
         action_id = '%i' % action_id
         actions[action_id] = {'state': args['state']}
-        return json(actions[action_id]), 201
+        return jsonify(actions[action_id]), 201
 
 api.add_resource(ActionList, '/api/v1.0/actions/')
 
@@ -50,7 +50,7 @@ api.add_resource(Action, '/api/v1.0/action/<action_id>/')
 
 @app.route('/api/v1.0/mensaje')
 def create_task():
-    return json('Hola mundo desde Flask')
+    return jsonify('Hola mundo desde Flask')
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000, host='0.0.0.0')
