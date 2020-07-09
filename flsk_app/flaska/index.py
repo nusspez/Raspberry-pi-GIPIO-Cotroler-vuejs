@@ -2,6 +2,11 @@ from app import app,api
 from resources.control import Pin
 from flask_restful import Resource,reqparse,Api
 from flask import jsonify
+from flask_cors import CORS
+
+
+CORS(app, resources={r'/*': {'origins': '*'}})
+
 
 actions = {}
 
