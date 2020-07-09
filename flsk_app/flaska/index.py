@@ -48,5 +48,9 @@ api.add_resource(ActionList, '/api/v1.0/actions/')
 
 api.add_resource(Action, '/api/v1.0/action/<action_id>/')
 
+@app.route('/api/v1.0/mensaje')
+def create_task():
+    return jsonify('Hola mundo desde Flask')
+
 if __name__ == '__main__':
     app.run(debug=True)
