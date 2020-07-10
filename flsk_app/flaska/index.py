@@ -3,8 +3,7 @@ from resources.control import Pin
 from flask_restful import Resource,reqparse,Api
 from flask import jsonify
 from flask_cors import CORS
-
-cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+from flask_restful.utils import cors
 
 api.decorators=[cors.crossdomain(origin='*')]
 
