@@ -8,7 +8,7 @@ actions = {}
 for i in range(2,28):
     actions[str(i)] = {'state':'0'}
 
-class Hello(view):
+class Hello(View):
     def dispatch_request(self):
         return  jsonify('Hola mundo desde Flask')
 
