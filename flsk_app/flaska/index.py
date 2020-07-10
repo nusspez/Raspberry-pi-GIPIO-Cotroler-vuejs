@@ -1,6 +1,6 @@
 from app import app
 from app.resources.control import Pin
-from app.views.AppViews import Hello
+from app.views.AppViews import HelloMesage
 actions = {}
 
 for i in range(2,28):
