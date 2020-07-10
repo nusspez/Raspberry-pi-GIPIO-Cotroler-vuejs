@@ -1,5 +1,4 @@
 from app import app
-from flask import jsonify
 from app.resources.control import Pin
 from app.views.HelloView import Hello
 actions = {}
