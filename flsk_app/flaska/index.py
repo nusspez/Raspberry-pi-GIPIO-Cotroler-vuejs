@@ -51,7 +51,7 @@ class ActionList(Resource):
         actions[action_id] = {'state': args['state']}
         return jsonify(actions[action_id], 201),{'Access-Control-Allow-Origin': '*'}
 
-@app.route("/api/v1/users/create", methods=['POST'])
+@app.route("/api/v1/users/create", methods=['PUT'])
 def create_user():
 
     return jsonify(success=True)
