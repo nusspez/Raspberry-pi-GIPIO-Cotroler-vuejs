@@ -3,11 +3,6 @@ from app.resources.control import Pin
 from app.views.AppViews import HelloMesage,GpioAPI
 
 
-app.route("/api/v1/users/create", methods=['POST'])
-def create_user():
-
-    return jsonify(success=True)
-
 app.add_url_rule('/api/v1.0/mensaje', view_func=HelloMesage.as_view('Hello'))
 
 user_view = GpioAPI.as_view("gpio_api")
