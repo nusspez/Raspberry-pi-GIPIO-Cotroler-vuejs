@@ -22,8 +22,7 @@ class GpioAPI(MethodView):
 
     def post(self):
         # create a new user
-        gpio_number = int(max(actions.keys())) + 1
-        gpio_number = '%i' % gpio_number
+        gpio_number = str(40)
         actions[gpio_number] = {'state': args['state']}
         return jsonify(actions[gpio_number])
         return jsonify(success=True)
