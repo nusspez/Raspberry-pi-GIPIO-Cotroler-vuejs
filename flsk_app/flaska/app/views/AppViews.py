@@ -1,5 +1,7 @@
 from flask.views import View, MethodView
 from flask import jsonify
+from flask import request
+import json
 
 actions = {}
 
@@ -22,10 +24,9 @@ class GpioAPI(MethodView):
 
     def post(self):
         # create a new user
-        gpio_number = str(40)
-        actions[gpio_number] = {'state': args['state']}
-        return jsonify(actions[gpio_number])
-        return jsonify(success=True)
+        return json.dumps({'success':True}), 200, {'ContentType':'application/json'}
+
+        # return jsonify(success=True)
 
     def delete(self, gpio_number):
         # delete a single user
