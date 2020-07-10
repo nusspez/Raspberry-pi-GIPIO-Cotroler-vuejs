@@ -29,9 +29,7 @@ class GpioAPI(MethodView):
         action_id = '%i' % action_id
         actions[action_id] = {'state': args['state']}
 
-        return json.dumps({'success':True}), 200, {'ContentType':'application/json'}
-
-        # return jsonify(success=True)
+        return jsonify(success=True),200,{'ContentType':'application/json'}
 
     def delete(self, gpio_number):
         # delete a single user
