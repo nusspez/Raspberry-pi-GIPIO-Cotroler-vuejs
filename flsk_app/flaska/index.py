@@ -48,15 +48,14 @@ class ActionList(Resource):
         action_id = int(max(actions.keys())) + 1
         action_id = '%i' % action_id
         actions[action_id] = {'state': args['state']}
-        return jsonify(actions[action_id], 201)
+        return jsonify(actions[action_id], 201),{'Access-Control-Allow-Origin': '*'} 
 
 
-@app.after_request
-def after_request(response):
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
-    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
-    return response
+def options (self):
+    return {'Allow' : 'PUT' }, 200, \
+    { 'Access-Control-Allow-Origin': '*', \
+      'Access-Control-Allow-Methods' : 'PUT,GET' }
+
 
 api.add_resource(ActionList, '/api/v1.0/actions/')
 
