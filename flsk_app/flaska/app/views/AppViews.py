@@ -24,6 +24,8 @@ class GpioAPI(MethodView):
 
     def post(self):
         # create a new user
+        print(request.get_json())
+
         return json.dumps({'success':True}), 200, {'ContentType':'application/json'}
 
         # return jsonify(success=True)
