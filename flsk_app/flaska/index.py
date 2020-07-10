@@ -1,4 +1,5 @@
-from app import app, jsonify
+from app import app
+from flask import jsonify
 from resources.control import Pin
 
 actions = {}
