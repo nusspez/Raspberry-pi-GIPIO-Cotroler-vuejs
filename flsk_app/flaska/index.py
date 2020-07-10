@@ -6,9 +6,7 @@ actions = {}
 for i in range(2,28):
     actions[str(i)] = {'state':'0'}
 
-
-app.add_url_rule('/api/v1.0/mensaje', view_func=Hello.as_view('Hello'))
-
+app.add_url_rule('/api/v1.0/mensaje', view_func=HelloMesage.as_view('Hello'))
 
 
 if __name__ == '__main__':
