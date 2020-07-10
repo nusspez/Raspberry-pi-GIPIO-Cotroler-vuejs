@@ -1,9 +1,6 @@
 from app import app
 from resources.control import Pin
 from flask import jsonify
-from flask_cors import CORS
-
-cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 actions = {}
 
