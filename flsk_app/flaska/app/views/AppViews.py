@@ -42,6 +42,6 @@ class GpioAPI(MethodView):
         args = request.get_json()
         query = {'state':args['state']}
         actions[gpio_number] = query
-        pin_action = Pin(query['state'], action_id)
+        pin_action = Pin(query['state'], gpio_number)
         pin_action.change_satate()
         return jsonify(success=True),200,{'ContentType':'application/json'}
