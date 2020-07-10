@@ -22,10 +22,11 @@ class GpioAPI(MethodView):
 
     def post(self):
         # create a new user
-        gpio_number = int(max(actions.keys())) + 1
-        gpio_number = '%i' % gpio_number
-        actions[gpio_number] = {'state': args['state']}
-        return jsonify(actions[gpio_number])
+        # gpio_number = int(max(actions.keys())) + 1
+        # gpio_number = '%i' % gpio_number
+        # actions[gpio_number] = {'state': args['state']}
+        # return jsonify(actions[gpio_number])
+        pass
 
     def delete(self, gpio_number):
         # delete a single user
