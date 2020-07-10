@@ -27,7 +27,7 @@ class GpioAPI(MethodView):
         args = request.get_json()
         i = len(actions)
         actions[i + 1] = {'state': args['state']}
-        print(actions[action_id])
+        print(actions[1 + 1])
         return jsonify(success=True),200,{'ContentType':'application/json'}
 
     def delete(self, gpio_number):
