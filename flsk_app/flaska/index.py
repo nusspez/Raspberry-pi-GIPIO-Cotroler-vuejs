@@ -4,10 +4,11 @@ from flask_restful import Resource,reqparse,Api
 from flask import jsonify
 from flask_cors import CORS
 
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+
 api.decorators=[cors.crossdomain(origin='*')]
 
 # CORS(app, resources={r'/*': {'origins': '*'}})
-cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 app.config['CORS_HEADERS'] = 'Content-Type'
 
