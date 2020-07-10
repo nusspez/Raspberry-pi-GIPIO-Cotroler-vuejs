@@ -33,6 +33,7 @@ class GpioAPI(MethodView):
     def delete(self, gpio_number):
         # delete a single user
         del actions[gpio_number]
+        return jsonify(success=True),200,{'ContentType':'application/json'}
 
     def put(self, gpio_number):
         # update a single user
