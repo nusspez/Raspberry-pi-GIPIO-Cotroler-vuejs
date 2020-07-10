@@ -18,7 +18,7 @@ class GpioAPI(MethodView):
             return jsonify(actions)
         else:
             # expose a single user
-            return jsonify(actions(gpio_number))
+            return jsonify(actions[gpio_number])
 
     def post(self):
         # create a new user
