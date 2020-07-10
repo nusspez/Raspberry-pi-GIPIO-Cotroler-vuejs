@@ -8,6 +8,7 @@ from flask_cors import CORS
 # CORS(app, resources={r'/*': {'origins': '*'}})
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 actions = {}
 
@@ -48,13 +49,12 @@ class ActionList(Resource):
         action_id = int(max(actions.keys())) + 1
         action_id = '%i' % action_id
         actions[action_id] = {'state': args['state']}
-        return jsonify(actions[action_id], 201),{'Access-Control-Allow-Origin': '*'} 
+        return jsonify(actions[action_id], 201),{'Access-Control-Allow-Origin': '*'}
 
+@app.route("/api/v1/users/create", methods=['POST'])
+def create_user():
 
-def options (self):
-    return {'Allow' : 'PUT' }, 200, \
-    { 'Access-Control-Allow-Origin': '*', \
-      'Access-Control-Allow-Methods' : 'PUT,GET' }
+    return jsonify(success=True)
 
 
 api.add_resource(ActionList, '/api/v1.0/actions/')
