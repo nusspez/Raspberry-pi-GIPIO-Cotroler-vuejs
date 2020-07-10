@@ -32,7 +32,7 @@ class GpioAPI(MethodView):
 
     def delete(self, gpio_number):
         # delete a single user
-        pass
+        del actions[gpio_number]
 
     def put(self, gpio_number):
         # update a single user
