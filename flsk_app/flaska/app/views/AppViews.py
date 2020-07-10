@@ -25,7 +25,7 @@ class GpioAPI(MethodView):
     def post(self):
         # create a new user
         args = request.get_json()
-        i = int(len(actions)) + 1
+        i = int(len(actions)) + 2
         actions[i] = {'state': args['state']}
         print(actions[i])
         return jsonify(success=True),200,{'ContentType':'application/json'}
