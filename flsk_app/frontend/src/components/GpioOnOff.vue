@@ -81,7 +81,7 @@ export default {
   methods:{
 
     postMesage: function () {
-      axios.put("http://192.168.1.71:5000/api/v1.0/action/2",{state:'1'})
+      axios.put("http://192.168.1.71:5000/api/v1/users/create",{state:'1'})
 
     }
   }

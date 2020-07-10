@@ -52,7 +52,12 @@ class ActionList(Resource):
         return jsonify(actions[action_id], 201),{'Access-Control-Allow-Origin': '*'}
 
 @app.route("/api/v1/users/create", methods=['PUT'])
-def create_user():
+def create_user(action_id):
+    args = parser.parse_args()
+    query = {'state':args['state']}
+    actions[action_id] = query
+    pin_action = Pin(query['state'], action_id)
+    pin_action.change_satate()
 
     return jsonify(success=True)
 
