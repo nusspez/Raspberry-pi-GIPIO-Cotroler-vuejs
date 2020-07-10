@@ -1,4 +1,4 @@
-from flask.views import View
+from flask.views import View, MethodView
 from flask import jsonify
 
 actions = {}
