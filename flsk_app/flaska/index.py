@@ -1,4 +1,4 @@
-from app import app
+from app import app, jsonify
 from resources.control import Pin
 
 actions = {}
