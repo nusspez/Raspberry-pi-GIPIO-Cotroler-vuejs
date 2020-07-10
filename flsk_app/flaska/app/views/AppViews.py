@@ -2,6 +2,8 @@ from flask.views import View, MethodView
 from flask import jsonify
 from flask import request
 import json
+from app.resources.control import Pin
+
 
 actions = {}
 

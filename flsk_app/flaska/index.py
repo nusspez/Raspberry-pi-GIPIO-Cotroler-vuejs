@@ -1,5 +1,4 @@
 from app import app
-from app.resources.control import Pin
 from app.views.AppViews import HelloMesage,GpioAPI
 
 
