@@ -37,4 +37,9 @@ class GpioAPI(MethodView):
 
     def put(self, gpio_number):
         # update a single user
-        pass
+        args = request.get_json()
+        query = {'state':args['state']}
+        actions[gpio_number] = query
+        pin_action = Pin(query['state'], action_id)
+        pin_action.change_satate()
+        return jsonify(success=True),200,{'ContentType':'application/json'}
