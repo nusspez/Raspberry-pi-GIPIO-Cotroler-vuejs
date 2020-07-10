@@ -33,12 +33,12 @@ class Action(Resource):
         return '', 204
 
     def put(self, action_id):
-        args = parser.parse_args()
-        query = {'state':args['state']}
-        actions[action_id] = query
-        pin_action = Pin(query['state'], action_id)
-        pin_action.change_satate()
-        return jsonify(query, 201)
+        # args = parser.parse_args()
+        # query = {'state':args['state']}
+        # actions[action_id] = query
+        # pin_action = Pin(query['state'], action_id)
+        # pin_action.change_satate()
+        return jsonify( 201)
 
 class ActionList(Resource):
     def get(self):
@@ -50,16 +50,6 @@ class ActionList(Resource):
         action_id = '%i' % action_id
         actions[action_id] = {'state': args['state']}
         return jsonify(actions[action_id], 201),{'Access-Control-Allow-Origin': '*'}
-
-@app.route("/api/v1/users/create", methods=['PUT'])
-def create_user(action_id):
-    args = parser.parse_args()
-    query = {'state':args['state']}
-    actions[action_id] = query
-    pin_action = Pin(query['state'], action_id)
-    pin_action.change_satate()
-
-    return jsonify(success=True)
 
 
 api.add_resource(ActionList, '/api/v1.0/actions/')
