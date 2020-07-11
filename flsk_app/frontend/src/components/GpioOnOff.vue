@@ -105,7 +105,6 @@
 
         </v-col>
       </v-row>
-
     </v-container>
 
   </div>
@@ -157,7 +156,7 @@ export default {
     postMesage: function (number, switch_number) {
       if (switch_number == false){
         console.log("false");
-        axios.put("http://192.168.1.71:5000/api/v1.0/action/" + number,this.post0);
+        axios.put("http://192.168.1.71:3000/api/v1.0/action/" + number,this.post0);
 
       }
       else {
