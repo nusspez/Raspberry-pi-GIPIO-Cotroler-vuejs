@@ -162,7 +162,7 @@ export default {
       }
       else {
         console.log("true")
-        axios.put("http://192.168.1.71:5000/api/v1.0/action/" + number,this.post1);
+        axios.put("http://192.168.1.71:3000/api/v1.0/action/" + number,this.post1);
 
       }
     }
